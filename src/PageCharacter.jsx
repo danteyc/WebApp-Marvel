@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { API_URL, DATETIME, KEY_HASH, KEY_PUBLIC } from "./contants";
+import { NavLink } from "react-router-dom";
 
 export default function PageCharacter() {
   const params = useParams();
@@ -22,9 +23,12 @@ export default function PageCharacter() {
    
   return (
     <div className="App">
-      <header className="App-header">{<h2>Comics</h2>}</header>
+      <header className="App-header">
+        <NavLink to="/" className="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1280px-Marvel_Logo.svg.png" alt="" /></NavLink>
+      </header>
       <div className="App-content">
         <div className="comics-container">
+          <h1 className="mb-4">Comics</h1>
           <div className="container">
             <div className="row">
               {comics.map((comic, k) => (

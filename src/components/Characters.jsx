@@ -25,17 +25,20 @@ export default function Characters() {
   }, []);
 
   return (
-    <div className="characters-container">
-      {loading ? "espere un momento por favor" : ""}
-      <div className="container">
-        <div className="row">
-          {characters.map((character, k) => (
-            <div className="col-6 col-md-4 col-lg-3" key={k}>
-              <Character character={character} />
-            </div>
-          ))}
+    <React.Fragment>
+      <h1 className="mb-4">Personajes Marvel</h1>
+      <div className="characters-container">
+        {loading ? "Cargando Personajes" : ""}
+        <div className="container">
+          <div className="row">
+            {characters.map((character, k) => (
+              <div className="col-6 col-md-4 col-lg-3" key={k}>
+                <Character character={character} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      </React.Fragment>
   );
 }
